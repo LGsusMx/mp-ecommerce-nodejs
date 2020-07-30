@@ -27,7 +27,7 @@ app.get("/detail", function(req, res) {
         {
             id : "1234",
             title: title,
-            description: "​Dispositivo móvil de Tienda e-commerce​",
+            description: 'Dispositivo móvil de Tienda e-commerce',
             picture_url: "https://redmx-mp-ecommerce-nodejs.herokuapp.com/assets/samsung-galaxy-s9-xxl.jpg",
             unit_price: parseFloat(price),
             quantity: parseInt(unit)
@@ -50,7 +50,7 @@ app.get("/detail", function(req, res) {
         "address": {
             "street_name": "Insurgentes Sur",
             "street_number": 1602,
-            "zip_code": "0394​0"
+            "zip_code": '03940'
         }
     },
     payment_methods: {
