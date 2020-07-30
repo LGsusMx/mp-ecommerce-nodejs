@@ -84,12 +84,14 @@
                                     {{ unit }}
                                 </h3>
                             </div>
-                            <form action="https://redmx-mp-ecommerce-nodejs.herokuapp.com/checkout/payment" method="GET">
-                                <script
+                             <form action="/procesar-pago" method="POST">
+                               <script
                                 src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
-                             data-header-color="#2D3277" data-button-label="Pagar la compra" data-elements-color="#2D3277">
-                                </script>
-                            </form>
+                                data-button-label="Pagar la compra"
+                                data-elements-color="#2D3277"
+                                data-preference-id={{ id }}>
+                                    </script>
+                            </form> 
                         </div>
                     </div>
                 </div>
@@ -97,3 +99,4 @@
         </div>
     </div>
 </div>
+   
