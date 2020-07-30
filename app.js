@@ -63,7 +63,7 @@ app.get("/detail", function(req, res) {
         installments: 6
      },
     external_reference: "caednicolas2@gmail.com",
-    notification_url: 'https://redmx-mp-ecommerce-nodejs.herokuapp.com/procesar-pago/notifications',
+    notification_url: 'https://redmx-mp-ecommerce-nodejs.herokuapp.com/notifications',
     auto_return:"approved"
   };
 
