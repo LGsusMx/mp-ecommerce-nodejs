@@ -64,9 +64,9 @@ app.post('/payment-process', function (req, res) {
     var fullUrl = req.protocol + '://' + req.get('host') + '/notifications';
 
     // Back URL for responses
-    var s = req.protocol + '://' + req.get('host') + '/success';
-    var p = req.protocol + '://' + req.get('host') + '/pending';
-    var f = req.protocol + '://' + req.get('host') + '/failure';
+    var se = req.protocol + '://' + req.get('host') + '/success';
+    var pe = req.protocol + '://' + req.get('host') + '/pending';
+    var fa = req.protocol + '://' + req.get('host') + '/failure';
     // Crea un objeto de preferencia
     let preference = {
         items: [
@@ -77,9 +77,9 @@ app.post('/payment-process', function (req, res) {
         payment_methods: { excluded_payment_methods: [{ id: 'amex' }], installments: 6 , excluded_payment_types:[{ id: 'atm' }]},
         notification_url: fullUrl,
         back_urls:{
-            success:s,
-            pending:p,
-            failure:f
+            success:se,
+            pending:pe,
+            failure:fa
         },
         auto_return:"approved"
 
@@ -98,6 +98,7 @@ app.post('/payment-process', function (req, res) {
 app.post('/notifications', (req,res)=>{
     var topic =req.body.topic;
     var id= req.body.id;
+    console.log(req);
     console.log(id + ' Notification');
     // rESPONSE OF NOTIFICATION
     res.status(200).send('OK');
