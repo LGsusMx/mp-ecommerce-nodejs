@@ -152,8 +152,9 @@ app.get('/success', function (req, res) {
 app.post('/notifications', async(req, res)=>{
   
     const body = req.body;
-    console.log("Maldo-Data-notifications")
+    //console.log("Maldo-Data-notifications")
     console.log(req.query);
+    console.log(req.body);
     res.status(200).json('OK')
 })
 
