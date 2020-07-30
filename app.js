@@ -44,7 +44,7 @@ app.get("/detail", function(req, res) {
       identification: { type: "DNI", number: "535650015" },
       email: "test_user_58295862@testuser.com",
       phone: { area_code: "52", number: 5549737300 },
-      address: { zip_code: '03940', street_name: "Insurgentes Sur", street_number: 1602 }
+      address: { zip_code: '0394​0', street_name: "Insurgentes Sur", street_number: 1602 }
     },
     payment_methods: {
         excluded_payment_methods: [
@@ -146,10 +146,7 @@ app.post('/notifications', async(req, res)=>{
     console.log(req.query);
     console.log(JSON.stringify(req.body));
     res.status(200).json('OK')
-})
-
-app.use(express.static("assets"));
-
-app.use("/assets", express.static(__dirname + "/assets"));
-
-app.listen(process.env.PORT || 3000);
+  console.log(id + ' Notification');
+    // rESPONSE OF NOTIFICATION
+    res.status(200).send('OK');
+});
