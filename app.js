@@ -150,8 +150,8 @@ app.post('/notifications', async(req, res)=>{
   
     const body = req.body;
     //console.log("Maldo-Data-notifications")
-    console.log(req.query);
-    console.log(req.body);
+    //console.log(req.query);
+    console.log(JSON.stringify(req));
     res.status(200).json('OK')
 })
 
