@@ -46,10 +46,7 @@ app.get("/detail", function(req, res) {
             "number" : "535650015"
         },
         "email" : "test_user_58295862@testuser.com",
-        "phone": {
-            "area_code": "52",
-            "number": ​5549737300
-        },
+        phone: { area_code: "52", number: 5549737300 },
         "address": {
             "street_name": "Insurgentes Sur",
             "street_number": 1602,
