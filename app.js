@@ -101,8 +101,12 @@ app.post('/notifications', (req,res)=>{
     console.log(JSON.stringify(req.body));
     console.log(id + ' Notification');
     // rESPONSE OF NOTIFICATION
-    console.log(topic + 'no c k es esto');
-    res.status(200).send('OK');
+    if (req.body.action == "payment.updated") {
+        res.status(200).send('OK');
+    } else {
+        
+    }
+    
 })
 
 app.use(express.static('assets'));
