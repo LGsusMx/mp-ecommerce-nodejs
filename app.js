@@ -38,6 +38,7 @@ app.get('/approved', function (req, res) {
 app.post('/payment-process', function (req, res) {
     // Item generation with examen expects
     var image_url = req.protocol + '://' + req.get('host') +req.body.img.substring(1);
+    console.log(req.body.img);
     var item = { 
         id: "1234",
         title: req.body.title,
