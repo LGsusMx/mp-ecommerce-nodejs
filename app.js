@@ -38,7 +38,7 @@ app.get('/approved', function (req, res) {
 app.post('/payment-process', function (req, res) {
     // Item generation with examen expects
     var image_url = req.protocol + '://' + req.get('host') +req.body.img.substring(1);
-    console.log(req.body.img);
+    console.log(image_url);
     var item = { 
         id: "1234",
         title: req.body.title,
@@ -52,7 +52,7 @@ app.post('/payment-process', function (req, res) {
     var payer = {
         name: "Lalo",
         surname:"Landa",
-        //identification: { type: "DNI", number: "535650015" },
+        identification: { type: "DNI", number: "535650015" },
         email: "test_user_58295862@testuser.com",
         phone: { area_code: "52", number: 5549737300 },
         address: { zip_code: "0394​0", street_name: "Insurgentes Sur", street_number: 1602 }
@@ -98,7 +98,7 @@ app.post('/payment-process', function (req, res) {
 app.post('/notifications', (req,res)=>{
     var topic =req.body.topic;
     var id= req.body.id;
-    console.log(id);
+    console.log(id + ' Notification');
     // rESPONSE OF NOTIFICATION
     res.status(200).send('OK');
 })
