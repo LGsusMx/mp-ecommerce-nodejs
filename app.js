@@ -44,6 +44,7 @@ app.post('/payment-process', function (req, res) {
         title: req.body.title,
         unit_price: parseFloat(req.body.price),
         category_id: 'phones',
+        currency_id: "MXN",
         description: "Dispositivo móvil de Tienda e-commerce",
         picture_url: image_url,
         quantity:1,
@@ -58,7 +59,7 @@ app.post('/payment-process', function (req, res) {
         address: { zip_code: '03940', street_name: "Insurgentes Sur", street_number: 1602 }
     };
     //external reference with my mail
-    var external_reference = 'caednicolas2@gmail.com';
+    var external_reference = "caednicolas2@gmail.com";
 
     //full url for notifications API
     var fullUrl = req.protocol + '://' + req.get('host') + '/notifications';
