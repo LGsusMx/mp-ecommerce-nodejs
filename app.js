@@ -27,7 +27,7 @@ app.get("/detail", function(req, res) {
         {
             id : "1234",
             title: title,
-            description: "​Dispositivo móvil de Tienda e-commerce​",
+            description: "Dispositivo móvil de Tienda e-commerce",
             picture_url: "https://redmx-mp-ecommerce-nodejs.herokuapp.com/assets/samsung-galaxy-s9-xxl.jpg",
             unit_price: parseFloat(price),
             quantity: parseInt(unit)
@@ -39,19 +39,12 @@ app.get("/detail", function(req, res) {
         "failure": req.protocol + '://' + req.get('host') + '/failure'
     },
     payer: {
-        "name": "Lalo",
-        "surname": "Landa",
-        "identification": {
-            "type" : "DNI",
-            "number" : "535650015"
-        },
-        "email" : "test_user_58295862@testuser.com",
-        phone: { area_code: "52", number: 5549737300 },
-        "address": {
-            "street_name": "Insurgentes Sur",
-            "street_number": 1602,
-            "zip_code": "0394​0"
-        }
+      name: "Lalo",
+      surname:"Landa",
+      identification: { type: "DNI", number: "535650015" },
+      email: "test_user_58295862@testuser.com",
+      phone: { area_code: "52", number: 5549737300 },
+      address: { zip_code: "0394​0", street_name: "Insurgentes Sur", street_number: 1602 }
     },
     payment_methods: {
         excluded_payment_methods: [
