@@ -98,7 +98,7 @@ app.post('/payment-process', function (req, res) {
 app.post('/notifications', (req,res)=>{
     var topic =req.body.topic;
     var id= req.body.id;
-    console.log(JSON.stringify(res));
+    console.log(JSON.stringify(req.body));
     console.log(id + ' Notification');
     // rESPONSE OF NOTIFICATION
     res.status(200).send('OK');
