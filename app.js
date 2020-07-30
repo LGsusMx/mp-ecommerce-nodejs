@@ -27,6 +27,7 @@ app.get("/detail", function(req, res) {
         {
             id : "1234",
             title: title,
+            description: "​Dispositivo móvil de Tienda e-commerce​",
             picture_url: "https://redmx-mp-ecommerce-nodejs.herokuapp.com/assets/samsung-galaxy-s9-xxl.jpg",
             unit_price: parseFloat(price),
             quantity: parseInt(unit)
