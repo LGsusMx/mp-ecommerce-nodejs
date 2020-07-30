@@ -35,7 +35,7 @@ app.get('/approved', function (req, res) {
     res.render('approved');
 });
 
-app.post('/payment-process', function (req, res) {
+app.post('/payment-process', async function (req, res) {
     // Item generation with examen expects
     var image_url = req.protocol + '://' + req.get('host') +req.body.img.substring(1);
     console.log(image_url);
