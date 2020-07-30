@@ -42,8 +42,8 @@ app.get("/detail", function(req, res) {
         name: "Lalo",
         surname: "Landa",
         identification: {
-            "type" : "DNI",
-            "number" : "535650015"
+            type : "DNI",
+            number : "535650015"
         },
         email : "test_user_58295862@testuser.com",
         phone: {
