@@ -59,7 +59,7 @@ app.post('/payment-process', function (req, res) {
         address: { zip_code: '03940', street_name: "Insurgentes Sur", street_number: 1602 }
     };
     //external reference with my mail
-    var external_reference = "caednicolas2@gmail.com";
+    var external_reference = 'caednicolas2@gmail.com';
 
     //full url for notifications API
     var fullUrl = req.protocol + '://' + req.get('host') + '/notifications';
@@ -102,11 +102,8 @@ app.post('/notifications', (req,res)=>{
     console.log(JSON.stringify(req.body));
     console.log(id + ' Notification');
     // rESPONSE OF NOTIFICATION
-    if (req.body.action == "payment.updated") {
-        res.status(200).send('OK');
-    } if(req.body.action == "payment.created"){
-        res.status(201).send('CREATED');
-    }
+    res.status(200).send('OK');
+
     
 })
 
