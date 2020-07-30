@@ -103,8 +103,8 @@ app.post('/notifications', (req,res)=>{
     // rESPONSE OF NOTIFICATION
     if (req.body.action == "payment.updated") {
         res.status(200).send('OK');
-    } else {
-        
+    } if(req.body.action == "payment.created"){
+        res.status(201).send('CREATED');
     }
     
 })
