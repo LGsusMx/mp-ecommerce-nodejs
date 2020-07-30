@@ -7,7 +7,7 @@ const mercadopago = require('mercadopago');
 var app = express();
 dotenv.config();
 mercadopago.configure({
-    access_token: process.env.ACCESS_TOKEN
+    access_token: 'APP_USR-1159009372558727-072921-8d0b9980c7494985a5abd19fbe921a3d-617633181'
 });
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
