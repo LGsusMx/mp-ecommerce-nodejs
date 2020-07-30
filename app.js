@@ -34,26 +34,26 @@ app.get("/detail", function(req, res) {
         }
     ],
     back_urls: {
-        "success": req.protocol + '://' + req.get('host') + '/success',
-        "pending": req.protocol + '://' + req.get('host') + '/pending',
-        "failure": req.protocol + '://' + req.get('host') + '/failure'
+        success: req.protocol + '://' + req.get('host') + '/success',
+        pending: req.protocol + '://' + req.get('host') + '/pending',
+        failure: req.protocol + '://' + req.get('host') + '/failure'
     },
     payer: {
-        "name": "Lalo",
-        "surname": "Landa",
-        "identification": {
+        name: "Lalo",
+        surname: "Landa",
+        identification: {
             "type" : "DNI",
             "number" : "535650015"
         },
-        "email" : "test_user_58295862@testuser.com",
-        "phone": {
-            "area_code": "52",
-            "number": ​5549737300
+        email : "test_user_58295862@testuser.com",
+        phone: {
+            area_code: "52",
+            number: ​5549737300
         },
-        "address": {
-            "street_name": "Insurgentes Sur",
-            "street_number": 1602,
-            "zip_code": "0394​0"
+        address: {
+            street_name: "Insurgentes Sur",
+            street_number: 1602,
+            zip_code: "0394​0"
         }
     },
     payment_methods: {
