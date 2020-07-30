@@ -27,8 +27,8 @@ app.get("/detail", function(req, res) {
         {
             id : "1234",
             title: title,
-            descrption: "Dispositivo móvil de Tienda e-commerce",
-            picture_url: img,
+            description: "​Dispositivo móvil de Tienda e-commerce​",
+            picture_url: "https://redmx-mp-ecommerce-nodejs.herokuapp.com/assets/samsung-galaxy-s9-xxl.jpg",
             unit_price: parseFloat(price),
             quantity: parseInt(unit)
         }
@@ -43,17 +43,17 @@ app.get("/detail", function(req, res) {
         "surname": "Landa",
         "identification": {
             "type" : "DNI",
-            "number" : "22333444"
+            "number" : "535650015"
         },
-        "email" : "test_user_63274575@testuser.com",
+        "email" : "test_user_58295862@testuser.com",
         "phone": {
-            "area_code": "011",
-            "number": 22223333
+            "area_code": "52",
+            "number": ​5549737300
         },
         "address": {
-            "street_name": "Falsa",
-            "street_number": 123,
-            "zip_code": "1111"
+            "street_name": "Insurgentes Sur",
+            "street_number": 1602,
+            "zip_code": "0394​0"
         }
     },
     payment_methods: {
@@ -65,7 +65,7 @@ app.get("/detail", function(req, res) {
         ],
         installments: 6
      },
-    external_reference: "ABCD1234",
+    external_reference: "caednicolas2@gmail.com",
     notification_url: req.protocol + '://' + req.get('host') + '/notifications',
     auto_return:"approved"
   };
