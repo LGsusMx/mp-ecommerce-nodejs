@@ -2,6 +2,7 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 var bodyParser = require('body-parser');
 var dotenv = require('dotenv');
+const payer = require('./controller/cosito')
 // SDK MP
 const mercadopago = require('mercadopago');
 var app = express();
@@ -35,7 +36,7 @@ app.get('/approved', function (req, res) {
     res.render('approved');
 });
 
-app.post('/payment-process', async function (req, res) {
+app.post('/payment-process', function (req, res) {
     // Item generation with examen expects
     var image_url = req.protocol + '://' + req.get('host') +req.body.img.substring(1);
     console.log(image_url);
@@ -49,49 +50,8 @@ app.post('/payment-process', async function (req, res) {
         picture_url: image_url,
         quantity:1,
     };
-    // Fill the payer data with the exam data uwu
-    var payer = {
-        name: "Lalo",
-        surname:"Landa",
-        identification: { type: "DNI", number: "535650015" },
-        email: "test_user_58295862@testuser.com",
-        phone: { area_code: "52", number: 5549737300 },
-        address: { zip_code: '03940', street_name: "Insurgentes Sur", street_number: 1602 }
-    };
-    //external reference with my mail
-    var external_reference = 'caednicolas2@gmail.com';
-
-    //full url for notifications API
-    var fullUrl = req.protocol + '://' + req.get('host') + '/notifications';
-
-    // Back URL for responses
-    var se = req.protocol + '://' + req.get('host') + '/success';
-    var pe = req.protocol + '://' + req.get('host') + '/pending';
-    var fa = req.protocol + '://' + req.get('host') + '/failure';
-    // Crea un objeto de preferencia
-    let preference = {
-        items: [
-            item
-        ],
-        payer: payer,
-        external_reference: external_reference,
-        payment_methods: { excluded_payment_methods: [{ id: 'amex' }], installments: 6 , excluded_payment_types:[{ id: 'atm' }]},
-        notification_url: fullUrl,
-        back_urls:{
-            success:se,
-            pending:pe,
-            failure:fa
-        },
-        auto_return:"approved"
-
-    };
-    mercadopago.preferences.create(preference).then((response) => {
-        console.log(response.body.id)
-        res.render('detail', {id:response.body.id, price:req.body.price, title:req.body.title, img:req.body.img});
-    }).catch((error) => {
-        console.log(error)
-        res.status(500).send(error);
-    });
+    var coso = new payer();
+    coso.createPaymentMercadoPago(req,req.body.title,req.body.price,image_url);
 
 });
 
